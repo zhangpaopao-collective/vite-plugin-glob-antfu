@@ -2,7 +2,6 @@ import { resolve } from 'node:path'
 import { promises as fs } from 'node:fs'
 import { describe, expect, it } from 'vitest'
 import { transform } from '../src/transform'
-import { list } from './fixtures'
 
 describe('should', async () => {
   const id = resolve(__dirname, './fixtures/index.ts')
@@ -14,7 +13,9 @@ describe('should', async () => {
           name: string
         }
 
-        export const list = {  './modules/a.ts': () => import('./modules/a.ts'), './modules/b.ts': () => import('./modules/b.ts'), './modules/index.ts': () => import('./modules/index.ts'), }
+        export const list1 = {'./modules/a.ts': () => import('./modules/a.ts'),'./modules/b.ts': () => import('./modules/b.ts'),'./modules/index.ts': () => import('./modules/index.ts')}
+
+        export const list2 = {'./modules/a.ts': () => import('./modules/a.ts'),'./modules/b.ts': () => import('./modules/b.ts')}
         "
       `)
   })
