@@ -32,6 +32,7 @@
     "build": "unbuild",
     "dev": "unbuild --stub",
     "lint": "eslint .",
+    "play": "vite playground",
     "prepublishOnly": "nr build",
     "release": "bumpp && npm publish",
     "start": "esno src/index.ts",
@@ -61,5 +62,9 @@
   },
   "lint-staged": {
     "*": "eslint --fix"
+  },
+  "dependencies": {
+    "fast-glob": "^3.3.2",
+    "magic-string": "^0.30.10"
   }
 }
